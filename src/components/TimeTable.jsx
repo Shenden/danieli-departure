@@ -3,23 +3,32 @@ import Train from "../assets/Logo";
 
 export const TimeTable = ({ title }) => {
   const [timeTable, setTimeTable] = useState([]);
+  const [error, setError] = useState();
 
   useEffect(() => {
     async function FetchDeparture() {
-      const response = await fetch(
-        "https://api.resrobot.se/v2.1/departureBoard?id=740021668&format=json&accessId=01c3b8ea-9c3b-486e-98d8-c3291bd89e27",
-      );
+      try {
+        const response = await fetch(
+          "https://api.resrobot.se/v2.1/departureBoard?id=740021668&format=json&accessId=01c3b8ea-9c3b-486e-98d8-c3291bd89e27",
+        );
+        const departures = await response.json();
 
-      if (!response.ok) {
+        if (!response.ok) {
+          throw new Error("failed to fetch departures...");
+        }
+        setTimeTable(departures.Departure);
+      } catch (error) {
+        setError({ message: error.message } || "something went wrong...");
       }
-      const departures = await response.json();
-      setTimeTable(departures.Departure);
     }
 
     //call it
     FetchDeparture();
   }, []);
 
+  if (error) {
+    return <h1>{error.message}</h1>;
+  }
   //get my departures
   const currentCityDeparture = timeTable.find((item) =>
     item.direction.includes("Kungsträdgården"),
