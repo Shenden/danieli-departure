@@ -104,6 +104,8 @@ li {
 @media (max-width: 600px) {
   header {
     flex-direction: column-reverse;
+    justify-content: center;
+    text-align: center;
   }
 
   .direction {
