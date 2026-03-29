@@ -37,19 +37,20 @@ export const TimeTable = ({ title }) => {
   return (
     <div>
       <header>
+        <div className="train-sign">
+          <h1>T</h1>
+        </div>
         <div className="top-wrapper">
           <h1> {title} </h1>
           <small> {currentCityDeparture?.date} </small>
         </div>
-
-        <Train />
       </header>
 
       <ul>
         <li>
           <div className="direction">
             <div className="line">
-              <h3 className="train-nr">{trainLine}</h3>
+              <Train />
             </div>
             <h3>Mot: {currentCityDeparture?.direction}</h3>
           </div>
@@ -58,7 +59,7 @@ export const TimeTable = ({ title }) => {
         <li>
           <div className="direction">
             <div className="line">
-              <h3 className="train-nr">{trainLine}</h3>
+              <Train />
             </div>
             <h3>Mot: {currentHomeDeparture?.direction}</h3>
           </div>
