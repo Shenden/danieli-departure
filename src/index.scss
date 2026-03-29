@@ -12,7 +12,7 @@
 }
 
 html {
-  color: cyan;
+  color: dodgerblue;
   font-family: "Saira", sans-serif;
   font-size: 1rem;
 }
@@ -26,7 +26,7 @@ body {
 
 svg {
   max-width: 4rem;
-  fill: cyan;
+  fill: whitesmoke;
 }
 header {
   padding: 2rem 0;
@@ -34,7 +34,7 @@ header {
   display: flex;
   justify-content: end;
   align-items: center;
-  border-bottom: dashed 1px cyan;
+  border-bottom: dashed 1px dodgerblue;
   gap: 1rem;
   margin: 2rem;
   .top-wrapper {
@@ -45,20 +45,20 @@ header {
 }
 
 small {
-  color: rgb(34, 189, 189);
+  color: rgb(99, 173, 246);
 }
 
 h1 {
   text-transform: uppercase;
   text-shadow:
-    0 0 10px rgba(0, 193, 193, 0.6),
-    0 0 20px rgba(0, 193, 193, 0.4),
-    0 0 30px rgba(0, 193, 193, 0.3);
+    0 0 10px rgba(40, 144, 248, 0.6),
+    0 0 20px rgba(40, 144, 248, 0.4),
+    0 0 30px rgba(40, 144, 248, 0.3);
   margin: 4px 0;
 }
 
 h3 {
-  color: rgb(25, 192, 192);
+  color: whitesmoke;
   display: inline-block;
   margin: 0;
   padding: 0;
@@ -100,7 +100,7 @@ li {
     position: relative;
     &::before {
       content: "";
-      background-color: cyan;
+      background-color: white;
       height: 1px;
       left: 40px;
       top: 50%;
