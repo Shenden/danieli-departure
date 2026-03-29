@@ -100,3 +100,16 @@ li {
     }
   }
 }
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column-reverse;
+  }
+
+  .direction {
+    flex-direction: column;
+  }
+  .line::before {
+    display: none;
+  }
+}
