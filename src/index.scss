@@ -37,6 +37,15 @@ header {
   border-bottom: dashed 1px cyan;
   gap: 1rem;
   margin: 2rem;
+  .top-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+}
+
+small {
+  color: rgb(34, 189, 189);
 }
 
 h1 {
@@ -49,6 +58,7 @@ h1 {
 }
 
 h3 {
+  color: rgb(25, 192, 192);
   display: inline-block;
   margin: 0;
   padding: 0;
@@ -79,7 +89,7 @@ li {
   align-items: center;
   gap: 1rem;
   .line {
-    background-color: cyan;
+    background-color: whitesmoke;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,6 +109,9 @@ li {
       position: absolute;
     }
   }
+  .train-nr {
+    color: black;
+  }
 }
 
 @media (max-width: 600px) {
@@ -106,6 +119,9 @@ li {
     flex-direction: column-reverse;
     justify-content: center;
     text-align: center;
+    .top-wrapper {
+      align-items: center;
+    }
   }
 
   .direction {

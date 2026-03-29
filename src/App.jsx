@@ -3,7 +3,7 @@ import { TimeTable } from "./components/TimeTable";
 function App() {
   return (
     <>
-      <TimeTable />
+      <TimeTable title="Näckrosen" />
     </>
   );
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Train from "../assets/Logo";
 
-export const TimeTable = () => {
+export const TimeTable = ({ title }) => {
   const [timeTable, setTimeTable] = useState([]);
 
   useEffect(() => {
@@ -37,7 +37,11 @@ export const TimeTable = () => {
   return (
     <div>
       <header>
-        <h1> Näckrosen - {currentCityDeparture?.date} </h1>
+        <div className="top-wrapper">
+          <h1> {title} </h1>
+          <small> {currentCityDeparture?.date} </small>
+        </div>
+
         <Train />
       </header>
 
@@ -45,7 +49,7 @@ export const TimeTable = () => {
         <li>
           <div className="direction">
             <div className="line">
-              <h3>{trainLine}</h3>
+              <h3 className="train-nr">{trainLine}</h3>
             </div>
             <h3>Mot: {currentCityDeparture?.direction}</h3>
           </div>
@@ -54,7 +58,7 @@ export const TimeTable = () => {
         <li>
           <div className="direction">
             <div className="line">
-              <h3>{trainLine}</h3>
+              <h3 className="train-nr">{trainLine}</h3>
             </div>
             <h3>Mot: {currentHomeDeparture?.direction}</h3>
           </div>
