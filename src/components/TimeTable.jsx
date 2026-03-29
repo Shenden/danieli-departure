@@ -50,7 +50,7 @@ export const TimeTable = ({ title }) => {
         <li>
           <div className="direction">
             <div className="line">
-              <Train />
+              <Train className="logo" />
             </div>
             <h3>Mot: {currentCityDeparture?.direction}</h3>
           </div>
