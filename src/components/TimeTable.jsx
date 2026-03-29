@@ -1,0 +1,72 @@
+import { useEffect, useState } from "react";
+import Train from "../assets/Logo";
+
+export const TimeTable = () => {
+  const [timeTable, setTimeTable] = useState([]);
+
+  useEffect(() => {
+    async function FetchDeparture() {
+      const response = await fetch(
+        "https://api.resrobot.se/v2.1/departureBoard?id=740021668&format=json&accessId=01c3b8ea-9c3b-486e-98d8-c3291bd89e27",
+      );
+
+      if (!response.ok) {
+      }
+      const departures = await response.json();
+      setTimeTable(departures.Departure);
+    }
+
+    //call it
+    FetchDeparture();
+  }, []);
+
+  //get my departures
+  const currentCityDeparture = timeTable.find((item) =>
+    item.direction.includes("Kungsträdgården"),
+  );
+
+  const currentHomeDeparture = timeTable.find((item) =>
+    item.direction.includes("Akalla"),
+  );
+
+  const trainLine = currentCityDeparture?.ProductAtStop.line;
+
+  console.log(timeTable);
+  console.log(currentCityDeparture?.direction);
+
+  return (
+    <div>
+      <header>
+        <h1> Näckrosen - {currentCityDeparture?.date} </h1>
+        <Train />
+      </header>
+
+      <ul>
+        <li>
+          <div className="direction">
+            <div className="line">
+              <h3>{trainLine}</h3>
+            </div>
+            <h3>Mot: {currentCityDeparture?.direction}</h3>
+          </div>
+          <h1>{currentCityDeparture?.time}</h1>
+        </li>
+        <li>
+          <div className="direction">
+            <div className="line">
+              <h3>{trainLine}</h3>
+            </div>
+            <h3>Mot: {currentHomeDeparture?.direction}</h3>
+          </div>
+          <h1>{currentHomeDeparture?.time}</h1>
+        </li>
+      </ul>
+    </div>
+  );
+};
+
+/*  {timeTable.map((departure) => (
+          <li key={departure.stopExtId}>
+            {departure.direction} - Departure at: {departure.time}
+          </li>
+        ))} */

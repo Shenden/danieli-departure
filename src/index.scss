@@ -1,0 +1,102 @@
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&family=Silkscreen:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color: cyan;
+  font-family: "Saira", sans-serif;
+  font-size: 1rem;
+}
+
+body {
+  background: #152331; /* fallback for old browsers */
+  background: linear-gradient(to top, #000000, #152331);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+svg {
+  max-width: 4rem;
+  fill: cyan;
+}
+header {
+  padding: 2rem 0;
+  text-align: right;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  border-bottom: dashed 1px cyan;
+  gap: 1rem;
+  margin: 2rem;
+}
+
+h1 {
+  text-transform: uppercase;
+  text-shadow:
+    0 0 10px rgba(0, 193, 193, 0.6),
+    0 0 20px rgba(0, 193, 193, 0.4),
+    0 0 30px rgba(0, 193, 193, 0.3);
+  margin: 4px 0;
+}
+
+h3 {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0 2rem;
+  max-width: 55rem;
+}
+li {
+  border-bottom: solid 1px rgb(57, 80, 80);
+  padding: 24px;
+  text-align: center;
+  &:last-child {
+    border: none;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+.direction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  .line {
+    background-color: cyan;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: black;
+    position: relative;
+    &::before {
+      content: "";
+      background-color: cyan;
+      height: 1px;
+      left: 40px;
+      top: 50%;
+      width: 50%;
+      max-width: 100%;
+      position: absolute;
+    }
+  }
+}
