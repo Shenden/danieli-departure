@@ -29,7 +29,7 @@ export const TimeTable = ({ title }) => {
     item.direction.includes("Akalla"),
   );
 
-  const trainLine = currentCityDeparture?.ProductAtStop.line;
+  //const trainLine = currentCityDeparture?.ProductAtStop.line;
 
   console.log(timeTable);
   console.log(currentCityDeparture?.direction);
