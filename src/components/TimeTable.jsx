@@ -6,6 +6,7 @@ export const TimeTable = ({ title }) => {
   const [error, setError] = useState();
 
   useEffect(() => {
+    /*    Note - API key grants 25 thousand requests per 30 days */
     async function FetchDeparture() {
       try {
         const response = await fetch(
