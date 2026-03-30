@@ -25,9 +25,10 @@ body {
 }
 
 svg {
-  max-width: 2rem;
-  fill: black;
-  animation: slideUp 2s ease forwards;
+  width: 30px;
+  height: 30px;
+  fill: inherit;
+  animation: slideUp 1s ease forwards;
 }
 header {
   padding: 2rem 0;
@@ -46,7 +47,7 @@ header {
 }
 
 .train-sign {
-  animation: slideIn 1s ease forwards;
+  animation: slideIn 2s ease forwards;
   width: 50px;
   height: 50px;
   background-color: whitesmoke;
@@ -113,6 +114,7 @@ li {
     border-radius: 50%;
     color: black;
     position: relative;
+    overflow: hidden;
     &::before {
       content: "";
       background-color: whitesmoke;
@@ -128,11 +130,9 @@ li {
 
 @keyframes slideIn {
   from {
-    transform: translatex(-30px);
     opacity: 0;
   }
   to {
-    transform: translateX(0);
     opacity: 1;
   }
 }
