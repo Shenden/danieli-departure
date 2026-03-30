@@ -43,11 +43,14 @@ header {
     display: flex;
     flex-direction: column-reverse;
     align-items: flex-start;
+
+    h1 {
+      animation: slideIn 2s ease forwards;
+    }
   }
 }
 
 .train-sign {
-  animation: slideIn 2s ease forwards;
   width: 50px;
   height: 50px;
   background-color: whitesmoke;
@@ -130,9 +133,11 @@ li {
 
 @keyframes slideIn {
   from {
+    transform: translateX(30px);
     opacity: 0;
   }
   to {
+    transform: translateX(0);
     opacity: 1;
   }
 }
