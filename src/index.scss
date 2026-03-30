@@ -28,7 +28,6 @@ svg {
   width: 30px;
   height: 30px;
   fill: inherit;
-  animation: slideUp 1s ease forwards;
 }
 header {
   padding: 2rem 0;
@@ -117,7 +116,7 @@ li {
     border-radius: 50%;
     color: black;
     position: relative;
-    overflow: hidden;
+
     &::before {
       content: "";
       background-color: whitesmoke;
@@ -127,6 +126,7 @@ li {
       width: 50%;
       max-width: 100%;
       position: absolute;
+      overflow: hidden;
     }
   }
 }
