@@ -165,6 +165,9 @@ li {
 
   .direction {
     flex-direction: column;
+    .line {
+      overflow: hidden;
+    }
   }
   .line::before {
     display: none;
