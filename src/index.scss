@@ -169,4 +169,8 @@ li {
   .line::before {
     display: none;
   }
+
+  svg {
+    animation: slideUp 1s ease forwards;
+  }
 }
